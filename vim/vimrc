@@ -1,0 +1,43 @@
+source ~/.vim/bundles.vim
+
+inoremap jk <Esc>
+
+set background=dark
+silent! colorscheme solarized
+
+autocmd FileType c,cpp,java,make autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+set hidden
+set cursorline
+set number
+
+" Map leader
+let mapleader = ","
+
+" Shortcut to rapidly toggle `set list`
+nnoremap <leader>l :set list!<CR>
+
+function! SetPathAndTags()
+  if &filetype ==# 'netrw'
+    let currdir = b:netrw_curdir
+  else
+    let currdir = expand('%:p:h')
+  endif
+  execute 'cd' currdir
+  !ctags -R
+  cd -
+  let &path=&path.",".currdir."/**"
+  let &tags=&tags.",".currdir."/tags"
+endfunction
+
+" Add current files directory to path and tags
+nnoremap <leader>p :call SetPathAndTags()<CR>
+
+" Ag mappings
+nnoremap <leader>a :Ag! <C-R>=expand("<cword>")<CR> <C-R>=expand("%:p:h")<CR>
+
+" Load project specific vim configuration (vim must start from .vim.custom folder)
+if filereadable(".vim.custom")
+  so .vim.custom
+endif
+
