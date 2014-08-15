@@ -6,7 +6,7 @@ Create symlinks:
 
     ln -s ~/dotfiles/vim/vimrc ~/.vimrc
     ln -s ~/dotfiles/vim/gvimrc ~/.gvimrc (optional)
-    ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+    ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 Install Vim plugins:
 
