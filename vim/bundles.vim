@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 " Vundle setup
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#rc()
 Bundle 'gmarik/vundle'
 filetype plugin indent on
