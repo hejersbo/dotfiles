@@ -8,6 +8,7 @@ Create symlinks:
     ln -s ~/dotfiles/vim/gvimrc ~/.gvimrc (optional)
     ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
     ln -s ~/dotfiles/xmodmap/xmodmap ~/.Xmodmap
+    ln -s ~/dotfiles/bash/bashrc ~/.bashrc
 
 Install Vim plugins:
 
