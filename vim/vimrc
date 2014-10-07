@@ -34,7 +34,7 @@ endfunction
 nnoremap <leader>p :call SetPathAndTags()<CR>
 
 " Ag mappings
-nnoremap <leader>a :Ag! <C-R>=expand("<cword>")<CR> <C-R>=expand("%:p:h")<CR>
+nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=expand("%:p:h")<CR>
 
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")
