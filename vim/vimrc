@@ -10,6 +10,8 @@ autocmd FileType c,cpp,java,make autocmd BufWritePre <buffer> :%s/\s\+$//e
 set hidden
 set cursorline
 set number
+set nobackup
+set noswapfile
 
 " Map leader
 let mapleader = ","
