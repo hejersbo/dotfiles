@@ -5,7 +5,8 @@ inoremap jk <Esc>
 set background=dark
 silent! colorscheme solarized
 
-autocmd FileType c,cpp,java,make autocmd BufWritePre <buffer> :%s/\s\+$//e
+" Try tpope/sleuth instead
+" autocmd FileType c,cpp,java,make autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 set hidden
 set cursorline
