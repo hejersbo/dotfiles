@@ -27,7 +27,7 @@ function! SetPathAndTags()
     let currdir = expand('%:p:h')
   endif
   execute 'cd' currdir
-  !ctags -R
+  !ctags -R --c-kinds=+p
   cd -
   let &path=&path.",".currdir."/**"
   let &tags=&tags.",".currdir."/tags"
