@@ -1,8 +1,8 @@
 #!/bin/sh
-DARK_BG='#000014141A1A'
-# original: DARK_BG='#00002B2B3636'
-LIGHTEST='#FFFFFBFBF0F0'
-# original: LIGHTEST='#FDFDF6F6E3E3'
+# darker: DARK_BG='#000014141A1A'
+DARK_BG='#00002B2B3636'
+# lighter: LIGHTEST='#FFFFFBFBF0F0'
+LIGHTEST='#FDFDF6F6E3E3'
 
 gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_background" --type bool false
 gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_colors" --type bool false
