@@ -16,7 +16,12 @@ Install Vim plugins:
 
     launch vim and run :PluginInstall
 
+Install Solarized colors for gnome-terminal:
+
+    ~/dotfiles/gnome_term_solarized.sh 
+    
 Install xterm-16color terminfo (for Solarized in tmux):
+    
 
     sudo tic ~/dotfiles/xterm16-color.txt
 
