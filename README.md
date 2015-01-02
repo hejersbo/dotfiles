@@ -18,8 +18,9 @@ Install Vim plugins:
 
 Install Solarized colors for gnome-terminal:
 
-    ~/dotfiles/gnome_term_solarized.sh 
-    
+    git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
+    ./install.sh (first copy default terminal profile - to enable uninstall)
+
 Install xterm-16color terminfo (for Solarized in tmux):
     
 
