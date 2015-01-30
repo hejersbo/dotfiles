@@ -8,6 +8,9 @@ silent! colorscheme solarized
 " Uncomment line below to autostrip trailing whitespace on buffer write 
 " autocmd FileType c,cpp,java,make autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" Automatically open quickfix window after any grep
+autocmd QuickFixCmdPost *grep* cwindow
+
 set hidden
 set cursorline
 set number
@@ -38,6 +41,9 @@ nnoremap <leader>p :call SetPathAndTags()<CR>
 
 " Ag mappings
 nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=expand("%:p:h")<CR>
+
+" Ggrep mapping
+nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR>
 
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")
