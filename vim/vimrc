@@ -11,6 +11,9 @@ silent! colorscheme solarized
 " Automatically open quickfix window after any grep
 autocmd QuickFixCmdPost *grep* cwindow
 
+" Don't swamp buffer list with fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
 set hidden
 set cursorline
 set number
@@ -44,6 +47,9 @@ nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=expand("
 
 " Ggrep mapping
 nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR>
+
+" Show current git branch to status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")
