@@ -113,3 +113,6 @@ if [ -f ~/.bash_env ]; then
     . ~/.bash_env
 fi
 
+
+PERL_MB_OPT="--install_base \"/home/hejersbo/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/hejersbo/perl5"; export PERL_MM_OPT;
