@@ -9,6 +9,7 @@ Create symlinks:
     ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
     ln -s ~/dotfiles/xmodmap/xmodmap ~/.Xmodmap
     ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+    ln -s ~/dotfiles/tig/tigrc ~/.tigrc
 
 Install Vim plugins:
 
