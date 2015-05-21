@@ -6,7 +6,7 @@ set background=dark
 silent! colorscheme solarized
 
 " Uncomment line below to autostrip trailing whitespace on buffer write 
-" autocmd FileType c,cpp,java,make autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,make,perl autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Automatically open quickfix window after any grep
 autocmd QuickFixCmdPost *grep* cwindow
