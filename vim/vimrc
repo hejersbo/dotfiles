@@ -48,6 +48,9 @@ nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=expand("
 " Ggrep mapping
 nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR>
 
+" Toggle Gundo
+nnoremap <leader>u :GundoToggle<CR>
+
 " Show current git branch to status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 

@@ -20,6 +20,7 @@ Bundle 'tpope/vim-sleuth.git'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'rking/ag.vim'
+Bundle 'sjl/gundo.vim'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized.git'
