@@ -40,7 +40,7 @@ function! SetPathAndTags()
 endfunction
 
 " Add current files directory to path and tags
-nnoremap <leader>p :call SetPathAndTags()<CR>
+nnoremap <leader>t :call SetPathAndTags()<CR>
 
 " Ag mappings
 nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=expand("%:p:h")<CR>
@@ -50,6 +50,13 @@ nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR>
 
 " Toggle Gundo
 nnoremap <leader>u :GundoToggle<CR>
+
+" Pick mappings
+nnoremap <Leader>p :call PickFile()<CR>
+nnoremap <Leader>s :call PickFileSplit()<CR>
+nnoremap <Leader>v :call PickFileVerticalSplit()<CR>
+nnoremap <Leader>b :call PickBuffer()<CR>
+nnoremap <Leader>] :call PickTag()<CR>
 
 " Show current git branch to status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
