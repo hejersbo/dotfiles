@@ -21,7 +21,8 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'rking/ag.vim'
 Bundle 'sjl/gundo.vim'
-Bundle 'thoughtbot/pick.vim'
+" Bundle 'thoughtbot/pick.vim'
+Bundle 'hejersbo/pick.vim'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized.git'
