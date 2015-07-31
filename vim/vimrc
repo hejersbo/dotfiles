@@ -21,7 +21,7 @@ set nobackup
 set noswapfile
 
 " Map leader
-let mapleader = ","
+let mapleader = "\<Space>"
 
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
