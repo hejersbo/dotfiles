@@ -20,6 +20,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'thoughtbot/pick.vim'
+Plugin 'reedes/vim-pencil'
 
 " Colorschemes
 Plugin 'altercation/vim-colors-solarized'
