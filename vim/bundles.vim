@@ -3,28 +3,27 @@ filetype off
 
 " Vundle setup
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-Bundle 'gmarik/vundle'
-filetype plugin indent on
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
 " General enhancements
-Bundle 'tpope/vim-sensible.git'
-Bundle 'tpope/vim-abolish.git'
-Bundle 'tpope/vim-commentary.git'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'tpope/vim-surround.git'
-Bundle 'tpope/vim-unimpaired.git'
-Bundle 'tpope/vim-repeat.git'
-Bundle 'tpope/vim-dispatch.git'
-Bundle 'tpope/vim-sleuth.git'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'rking/ag.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'thoughtbot/pick.vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-sleuth'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'thoughtbot/pick.vim'
 
 " Colorschemes
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'nelstrom/vim-mac-classic-theme.git'
-Bundle 'nelstrom/vim-blackboard.git'
-
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'nelstrom/vim-mac-classic-theme'
+Plugin 'nelstrom/vim-blackboard'
+call vundle#end()
+filetype plugin indent on

@@ -58,9 +58,6 @@ nnoremap <Leader>v :call PickFileVerticalSplit()<CR>
 nnoremap <Leader>b :call PickBuffer()<CR>
 nnoremap <Leader>] :call PickTag()<CR>
 
-" Show current git branch to status line
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")
   so .vim.custom
