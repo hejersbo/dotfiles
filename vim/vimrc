@@ -21,6 +21,9 @@ set nobackup
 set noswapfile
 set showtabline=1
 
+" Workaround for disabling logipat. Avoid :E shadowing
+let g:loaded_logipat = 1
+
 " Map leader
 let mapleader = "\<Space>"
 
