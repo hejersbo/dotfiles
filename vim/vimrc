@@ -47,7 +47,7 @@ endfunction
 nnoremap <leader>t :call SetPathAndTags()<CR>
 
 " Ag mappings
-nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=expand("%:p:h")<CR>
+nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=substitute(system("git rev-parse --show-toplevel"), "\\n", "", "")<CR>
 
 " Ggrep mapping
 nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR>
