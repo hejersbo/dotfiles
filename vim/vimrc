@@ -30,6 +30,18 @@ let mapleader = "\<Space>"
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
 
+function! RegenerateTags()
+  for file in tagfiles()
+    let dir = fnamemodify(file, ":p:h")
+    execute 'cd' dir
+    !ctags -R --c-kinds=+p --extra=+f
+    cd -
+  endfor
+endfunction
+
+" Regenerate tag files
+nnoremap <leader>r :call RegenerateTags()<CR>
+
 function! SetPathAndTags()
   if &filetype ==# 'netrw'
     let currdir = b:netrw_curdir
