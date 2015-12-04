@@ -46,8 +46,18 @@ endfunction
 " Add current files directory to path and tags
 nnoremap <leader>t :call SetPathAndTags()<CR>
 
+function! GetSearchPath()
+  let l:output = system("git rev-parse --show-toplevel")
+  if v:shell_error == 0
+    let l:output = substitute(l:output, "\\n", "", "")
+  else
+    let l:output = expand("%:p:h")
+  endif
+  return l:output
+endfunction
+
 " Ag mappings
-nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=substitute(system("git rev-parse --show-toplevel"), "\\n", "", "")<CR>
+nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR>
 
 " Ggrep mapping
 nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR>
