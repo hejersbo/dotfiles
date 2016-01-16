@@ -23,6 +23,7 @@ Plugin 'rking/ag.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'thoughtbot/pick.vim'
 Plugin 'reedes/vim-pencil'
+Plugin 'junegunn/gv.vim'
 
 " Colorschemes
 Plugin 'altercation/vim-colors-solarized'
