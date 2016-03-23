@@ -18,6 +18,8 @@ Plug 'reedes/vim-pencil'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
