@@ -79,15 +79,13 @@ nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR>
 nnoremap <leader>u :GundoToggle<CR>
 
 " Pick mappings
-nnoremap <Leader>p :call PickFile()<CR>
-nnoremap <Leader>s :call PickFileSplit()<CR>
-nnoremap <Leader>v :call PickFileVerticalSplit()<CR>
-nnoremap <Leader>b :call PickBuffer()<CR>
 nnoremap <Leader>] :call PickTag()<CR>
 
-" GV mappings
-nnoremap <Leader>v :GV<CR>
-nnoremap <Leader>f :GV!<CR>
+" FZF mappings
+nnoremap <Leader><Leader> :Tags<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>f :Files<CR>
+
 
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")
