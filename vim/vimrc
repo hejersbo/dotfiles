@@ -41,7 +41,7 @@ function! RegenerateTags()
 endfunction
 
 " Regenerate tag files
-nnoremap <leader>r :call RegenerateTags()<CR>
+" nnoremap <leader>r :call RegenerateTags()<CR>
 
 function! SetPathAndTags()
   if &filetype ==# 'netrw'
@@ -57,7 +57,7 @@ function! SetPathAndTags()
 endfunction
 
 " Add current files directory to path and tags
-nnoremap <leader>t :call SetPathAndTags()<CR>
+" nnoremap <leader>t :call SetPathAndTags()<CR>
 
 function! GetSearchPath()
   let l:output = system("git rev-parse --show-toplevel")
