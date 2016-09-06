@@ -86,6 +86,10 @@ nnoremap <Leader><Leader> :Tags<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :Files<CR>
 
+" Fugitive mappings
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
 
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")
