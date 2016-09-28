@@ -73,7 +73,7 @@ endfunction
 nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR>
 
 " Ggrep mapping
-nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR>
+nnoremap <leader>gg :Ggrep <C-R>=expand("<cword>")<CR>
 
 " Toggle Gundo
 nnoremap <leader>u :GundoToggle<CR>
