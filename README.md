@@ -27,8 +27,15 @@ Install Solarized colors for gnome-terminal:
     ./install.sh (first copy default terminal profile - to enable uninstall)
 
 Install xterm-16color terminfo (for Solarized in tmux):
-    
 
     sudo tic ~/dotfiles/xterm16-color.txt
+
+Install Powerline pre-patched fonts:
+
+    git clone https://github.com/powerline/fonts.git
+
+    ./install.sh
+
+    configure terminal to use DejaVu Sans Mono for Powerline 12
 
 
