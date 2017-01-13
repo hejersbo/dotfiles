@@ -6,7 +6,7 @@ set background=dark
 silent! colorscheme solarized
 
 " Uncomment line below to autostrip trailing whitespace on buffer write
-autocmd FileType c,cpp,java,make,perl,vim,markdown autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,make,perl,vim,markdown,text autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Automatically open quickfix window after any grep
 autocmd QuickFixCmdPost *grep* cwindow
@@ -80,10 +80,10 @@ function! GetSearchPath()
 endfunction
 
 " Ag mappings
-nnoremap <leader>a :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR>
+" nnoremap <leader>g :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR>
 
 " Ggrep mapping
-nnoremap <leader>gg :Ggrep <C-R>=expand("<cword>")<CR>
+" nnoremap <leader>gg :Ggrep <C-R>=expand("<cword>")<CR>
 
 " Toggle Gundo
 nnoremap <leader>u :GundoToggle<CR>
@@ -92,17 +92,16 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <Leader>] :call PickTag()<CR>
 
 " FZF mappings
+" autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw('--ignore tags' . '--ignore-dir builds'. <q-args>)
 nnoremap <Leader><Leader> :Tags<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>gg :Ag <C-R>=expand("<cword>")<CR>
 
 " Fugitive mappings
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
-
-" GitGutter mappings
-nmap <Leader>gv <Plug>GitGutterPreviewHunk
 
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")
