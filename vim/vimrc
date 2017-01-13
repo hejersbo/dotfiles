@@ -31,6 +31,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#obsession#enabled = 1
 let g:airline_section_x = '%{PencilMode()}'
+let g:airline_section_y = '%{getcwd()}'
 
 let g:airline_symbols = get(g:,'airline_symbols',{})
 let g:airline_symbols.maxlinenr=''
