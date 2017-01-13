@@ -79,8 +79,11 @@ function! GetSearchPath()
   return l:output
 endfunction
 
-" Ag mappings
-" nnoremap <leader>g :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR>
+" Ag mapping (using Ack.vim)
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+    nnoremap <Leader>g :Ack <C-R>=expand("<cword>")<CR><CR>
+endif
 
 " Ggrep mapping
 nnoremap <leader>G :Ggrep <C-R>=expand("<cword>")<CR><CR>
@@ -96,7 +99,7 @@ nnoremap <Leader>] :call PickTag()<CR>
 nnoremap <Leader><Leader> :Tags<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>g :Ag <C-R>=expand("<cword>")<CR><CR>
+nnoremap <Leader>a :Ag <C-R>=expand("<cword>")<CR><CR>
 
 " Fugitive mappings
 " nnoremap <Leader>gs :Gstatus<CR>
