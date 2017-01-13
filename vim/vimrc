@@ -103,6 +103,9 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 
+" Some mappings
+nnoremap <Leader>c :ccl<CR>
+
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")
   so .vim.custom
