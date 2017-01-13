@@ -83,7 +83,7 @@ endfunction
 " nnoremap <leader>g :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR>
 
 " Ggrep mapping
-" nnoremap <leader>gg :Ggrep <C-R>=expand("<cword>")<CR>
+nnoremap <leader>G :Ggrep <C-R>=expand("<cword>")<CR>
 
 " Toggle Gundo
 nnoremap <leader>u :GundoToggle<CR>
@@ -96,12 +96,12 @@ nnoremap <Leader>] :call PickTag()<CR>
 nnoremap <Leader><Leader> :Tags<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>gg :Ag <C-R>=expand("<cword>")<CR>
+nnoremap <Leader>g :Ag <C-R>=expand("<cword>")<CR>
 
 " Fugitive mappings
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
+" nnoremap <Leader>gs :Gstatus<CR>
+" nnoremap <Leader>gd :Gdiff<CR>
+" nnoremap <Leader>gb :Gblame<CR>
 
 " Some mappings
 nnoremap <Leader>c :ccl<CR>
