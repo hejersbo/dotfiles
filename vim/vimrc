@@ -82,13 +82,12 @@ endfunction
 " Ag mapping (using Ack.vim)
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
-    nnoremap <Leader>g :Ack <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <Leader>G :Ack <C-R>=expand("<cword>")<CR><CR>
 endif
 
 " Ggrep mapping
-nnoremap <leader>G :Ggrep <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR><CR>
 
-" Toggle Gundo
 nnoremap <leader>u :GundoToggle<CR>
 
 " Pick mappings
@@ -99,7 +98,7 @@ nnoremap <Leader>] :call PickTag()<CR>
 nnoremap <Leader><Leader> :Tags<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>a :Ag <C-R>=expand("<cword>")<CR><CR>
+nnoremap <Leader>a :Ag<CR>
 
 " Fugitive mappings
 " nnoremap <Leader>gs :Gstatus<CR>
