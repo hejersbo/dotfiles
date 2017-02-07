@@ -14,6 +14,11 @@ autocmd QuickFixCmdPost *grep* cwindow
 " Don't swamp buffer list with fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" Make sure always to cd to cwd for each file opened in quickfix
+" to resolve filenames consistenly and to avoid (hopefully) any
+" cd's to other dirs than cwd.
+autocmd BufAdd * exe "cd" fnameescape(getcwd())
+
 set hidden
 set cursorline
 set number
@@ -21,10 +26,6 @@ set nobackup
 set noswapfile
 set showtabline=1
 set foldlevelstart=99
-
-" Abbreviations
-iabbrev treu true
-iabbrev adn and
 
 " Airline configuration
 let g:airline_powerline_fonts = 1
@@ -39,37 +40,6 @@ let g:airline_symbols.maxlinenr=''
 " Map leader
 let mapleader = "\<Space>"
 
-" Shortcut to rapidly toggle `set list`
-nnoremap <leader>l :set list!<CR>
-
-function! RegenerateTags()
-  for file in tagfiles()
-    let dir = fnamemodify(file, ":p:h")
-    execute 'cd' dir
-    !ctags -R --c-kinds=+p --extra=+f
-    cd -
-  endfor
-endfunction
-
-" Regenerate tag files
-" nnoremap <leader>r :call RegenerateTags()<CR>
-
-function! SetPathAndTags()
-  if &filetype ==# 'netrw'
-    let currdir = b:netrw_curdir
-  else
-    let currdir = expand('%:p:h')
-  endif
-  execute 'cd' currdir
-  !ctags -R --c-kinds=+p --extra=+f
-  cd -
-  let &path=&path.",".currdir."/**"
-  let &tags=&tags.",".currdir."/tags"
-endfunction
-
-" Add current files directory to path and tags
-" nnoremap <leader>t :call SetPathAndTags()<CR>
-
 function! GetSearchPath()
   let l:output = system("git rev-parse --show-toplevel")
   if v:shell_error == 0
@@ -80,33 +50,27 @@ function! GetSearchPath()
   return l:output
 endfunction
 
-" Ag mapping (using Ack.vim)
+" nnoremap <leader>g :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR>
+
+" Use ag for ack
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
-    nnoremap <Leader>G :Ack <C-R>=expand("<cword>")<CR><CR>
 endif
 
+" Ag(Ack) mapping
+nnoremap <Leader>G :Ack <C-R>=expand("<cword>")<CR><CR>
+" nnoremap <leader>g :Ack <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR><CR>
+
 " Ggrep mapping
-nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR><CR>
-
-nnoremap <leader>u :GundoToggle<CR>
-
-" Pick mappings
-nnoremap <Leader>] :call PickTag()<CR>
+nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR><CR><CR>
 
 " FZF mappings
-" autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw('--ignore tags' . '--ignore-dir builds'. <q-args>)
-nnoremap <Leader><Leader> :Tags<CR>
+nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>a :Ag<CR>
 
-" Fugitive mappings
-" nnoremap <Leader>gs :Gstatus<CR>
-" nnoremap <Leader>gd :Gdiff<CR>
-" nnoremap <Leader>gb :Gblame<CR>
-
-" Some mappings
+" Close quickfix window
 nnoremap <Leader>c :ccl<CR>
 
 " Load project specific vim configuration (vim must start from .vim.custom folder)
