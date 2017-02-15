@@ -1,5 +1,9 @@
 source ~/dotfiles/vim/plugs.vim
 
+if filereadable("Session.vim")
+  silent! source Session.vim
+endif
+
 inoremap jk <Esc>
 
 let env_color_light=$ENV_COLOR_LIGHT
@@ -10,6 +14,7 @@ else
 endif
 
 silent! colorscheme solarized
+
 
 " Uncomment line below to autostrip trailing whitespace on buffer write
 autocmd FileType c,cpp,java,make,perl,vim,markdown,text autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -83,4 +88,5 @@ nnoremap <Leader>c :ccl<CR>
 if filereadable(".vim.custom")
   so .vim.custom
 endif
+
 
