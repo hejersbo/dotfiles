@@ -2,7 +2,13 @@ source ~/dotfiles/vim/plugs.vim
 
 inoremap jk <Esc>
 
-set background=dark
+let env_color_light=$ENV_COLOR_LIGHT
+if (env_color_light == '1')
+  set background=light
+else
+  set background=dark
+endif
+
 silent! colorscheme solarized
 
 " Uncomment line below to autostrip trailing whitespace on buffer write

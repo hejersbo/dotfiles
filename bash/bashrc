@@ -89,6 +89,9 @@ alias gvim='UBUNTU_MENUPROXY= gvim'
 
 alias c='proca.py'
 
+alias sl='source ~/bin/set_light.sh'
+alias sd='source ~/bin/set_dark.sh'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -118,6 +121,5 @@ fi
 
 PERL_MB_OPT="--install_base \"/home/hejersbo/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/hejersbo/perl5"; export PERL_MM_OPT;
-
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
