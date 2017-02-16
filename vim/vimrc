@@ -69,7 +69,7 @@ if executable('ag')
 endif
 
 " Ag(Ack) mapping
-nnoremap <Leader>g :Ack <C-R>=expand("<cword>")<CR><CR>
+nnoremap <Leader>g :Ack --cc --asm <C-R>=expand("<cword>")<CR><CR>
 " nnoremap <leader>g :Ack <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR><CR>
 
 " Ggrep mapping
