@@ -69,17 +69,16 @@ if executable('ag')
 endif
 
 " Ag(Ack) mapping
-nnoremap <Leader>g :Ack --cc --asm <C-R>=expand("<cword>")<CR><CR>
+nnoremap <Leader>a :Ack --cc --asm <C-R>=expand("<cword>")<CR><CR>
 " nnoremap <leader>g :Ack <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR><CR>
 
 " Ggrep mapping
-nnoremap <leader>G :Ggrep <C-R>=expand("<cword>")<CR><CR><CR>
+nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR><CR><CR>
 
 " FZF mappings
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>a :Ag<CR>
 
 " Close quickfix window
 nnoremap <Leader>c :ccl<CR>
