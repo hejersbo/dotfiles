@@ -73,10 +73,9 @@ if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
-" Ag(Ack) mapping
-" nnoremap <Leader>a :Ack -tc -tmake -tasm <C-R>=expand("<cword>")<CR><CR>
-" nnoremap <leader>a :Ack <C-R>=expand("<cword>")<CR> <C-R>="GetSearchPath()<CR><CR>
-nnoremap <leader>r :Ack<Space>
+" rg mappings
+nnoremap <Leader>r :Ack <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>R :Ack<Space>
 
 " Ggrep mapping
 nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR><CR><CR>
