@@ -74,7 +74,7 @@ if executable('rg')
 endif
 
 " Ag(Ack) mapping
-nnoremap <Leader>a :Ack -tc -tmake -tasm -g "config.*"<C-R>=expand("<cword>")<CR><CR>
+nnoremap <Leader>a :Ack -tc -tmake -tasm"<C-R>=expand("<cword>")<CR><CR>
 " nnoremap <leader>g :Ack <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR><CR>
 
 " Ggrep mapping
