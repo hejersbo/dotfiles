@@ -64,12 +64,17 @@ endfunction
 " nnoremap <leader>g :Ag! --ignore tags <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR>
 
 " Use ag for ack
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
+" if executable('ag')
+"   let g:ackprg = 'ag --vimgrep'
+" endif
+
+" Use rg for ack
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
 " Ag(Ack) mapping
-nnoremap <Leader>a :Ack --cc --asm <C-R>=expand("<cword>")<CR><CR>
+nnoremap <Leader>a :Ack -tc -tmake -tasm -g "config.*"<C-R>=expand("<cword>")<CR><CR>
 " nnoremap <leader>g :Ack <C-R>=expand("<cword>")<CR> <C-R>=GetSearchPath()<CR><CR>
 
 " Ggrep mapping
