@@ -38,4 +38,6 @@ Install Powerline pre-patched fonts:
 
     configure terminal to use DejaVu Sans Mono for Powerline 12
 
+Install ripgrep:
 
+    https://github.com/BurntSushi/ripgrep
