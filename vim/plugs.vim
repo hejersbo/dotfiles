@@ -14,15 +14,12 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'thoughtbot/pick.vim'
 Plug 'reedes/vim-pencil'
 Plug 'wellle/targets.vim'
-Plug 'wellle/visual-split.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'vimwiki/vimwiki'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
