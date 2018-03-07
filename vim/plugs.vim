@@ -23,4 +23,5 @@ Plug 'mileszs/ack.vim'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
