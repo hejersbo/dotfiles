@@ -10,6 +10,7 @@ Create symlinks:
     ln -s ~/dotfiles/xmodmap/xmodmap ~/.Xmodmap
     ln -s ~/dotfiles/bash/bashrc ~/.bashrc
     ln -s ~/dotfiles/tig/tigrc ~/.tigrc
+    ln -s ~/dotfiles/alacritty/alacritty.yml ~/.alacritty.yml (for Alacritty terminal)
 
 Install Vim plugins:
 
