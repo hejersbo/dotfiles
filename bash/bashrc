@@ -134,7 +134,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 bind -x '"\C-p": vim $(fzf);'
 
 # Uncomment these for Solarized
-# ~/gnome-terminal-colors-solarized/set_dark.sh
-# export ENV_COLOR_LIGHT=0
-# export FZF_DEFAULT_OPTS='--color=dark'
+# ~/gnome-terminal-colors-solarized/set_light.sh
+# export ENV_COLOR_LIGHT=1
+# export FZF_DEFAULT_OPTS='--color=light'
 
