@@ -13,7 +13,13 @@ else
   set background=dark
 endif
 
-silent! colorscheme solarized
+" Uncomment this for Solarized
+" silent! colorscheme solarized
+
+" Uncomment these for Nord
+set termguicolors
+let g:nord_comment_brightness = 15
+silent! colorscheme nord
 
 
 " Uncomment line below to autostrip trailing whitespace on buffer write
