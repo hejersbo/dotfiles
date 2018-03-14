@@ -55,6 +55,10 @@ let g:airline_section_y = ''
 let g:airline_symbols = get(g:,'airline_symbols',{})
 let g:airline_symbols.maxlinenr=''
 
+" GitGutter is more snappy with a smaller updatetime
+set updatetime=100
+
+
 " Map leader
 let mapleader = "\<Space>"
 
