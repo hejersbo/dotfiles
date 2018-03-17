@@ -16,6 +16,12 @@ endif
 " Uncomment this for Solarized
 " silent! colorscheme solarized
 
+" Mods for Nord
+augroup NordMods
+    autocmd!
+    autocmd ColorScheme nord highlight CursorLineNr guifg=#81A1C1 guibg=#3B4252
+augroup end
+
 " Uncomment these for Nord
 set termguicolors
 let g:nord_comment_brightness = 15
