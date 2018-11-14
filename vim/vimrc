@@ -22,6 +22,13 @@ augroup NordMods
     autocmd ColorScheme nord highlight CursorLineNr guifg=#81A1C1 guibg=#3B4252
 augroup end
 
+" Test for Nord light theme
+" augroup NordLight
+"     autocmd!
+"     " Use fg=nord0, bg=nord4
+"     autocmd ColorScheme nord highlight Normal guifg=#2E3440 guibg=#D8DEE9
+" augroup end
+
 " Uncomment these for Nord
 set termguicolors
 let g:nord_comment_brightness = 15
@@ -97,13 +104,23 @@ nnoremap <leader>R :Ack<Space>
 " Ggrep mapping
 nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR><CR><CR>
 
+" Fugitive mappings
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gb :Gblame<CR>
 " FZF mappings
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>h :Helptags<CR>
 
 " Close quickfix window
 nnoremap <Leader>c :ccl<CR>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Load project specific vim configuration (vim must start from .vim.custom folder)
 if filereadable(".vim.custom")

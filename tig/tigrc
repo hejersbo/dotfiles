@@ -2,6 +2,8 @@
 set git-colors = no
 color cursor white 0 bold
 
+set main-view-author = full,width=30
+
 bind status a !?git commit --amend
 bind status C !?git commit -s
 bind main B !git rebase -i %(commit)
