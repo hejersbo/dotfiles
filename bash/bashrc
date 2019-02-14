@@ -85,6 +85,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+export EDITOR=vim
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -93,8 +95,8 @@ alias gvim='UBUNTU_MENUPROXY= gvim'
 
 alias c='proca.py'
 
-alias sl='source ~/bin/set_light.sh'
-alias sd='source ~/bin/set_dark.sh'
+# alias sl='source ~/bin/set_light.sh'
+# alias sd='source ~/bin/set_dark.sh'
 
 alias t='ctags -R --c-kinds=+d --exclude=builds'
 

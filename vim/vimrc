@@ -94,7 +94,7 @@ endfunction
 
 " Use rg for ack
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep --no-heading'
+  let g:ackprg = 'rg --vimgrep --no-heading -g!tags'
 endif
 
 " rg mappings
