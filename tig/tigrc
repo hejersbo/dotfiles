@@ -8,3 +8,4 @@ bind status a !?git commit --amend
 bind status C !?git commit -s
 bind main B !git rebase -i %(commit)
 bind main C !git checkout %(commit)
+bind main ! !git reset --hard %(commit)
