@@ -130,7 +130,6 @@ fi
 PERL_MB_OPT="--install_base \"/home/hejersbo/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/hejersbo/perl5"; export PERL_MM_OPT;
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 bind -x '"\C-p": vim $(fzf);'
@@ -140,3 +139,12 @@ bind -x '"\C-p": vim $(fzf);'
 # export ENV_COLOR_LIGHT=1
 # export FZF_DEFAULT_OPTS='--color=light'
 
+# Use keychain to store ssh key (single login)
+# ONLY use for wsl2 since std linux runs ssh-agent on startup
+/usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
+source $HOME/.keychain/$HOSTNAME-sh
+
+export OPENSSL_ROOT_DIR="/usr/lib"
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
