@@ -22,18 +22,19 @@ augroup NordMods
     autocmd ColorScheme nord highlight CursorLineNr guifg=#81A1C1 guibg=#3B4252
 augroup end
 
-" Test for Nord light theme
-" augroup NordLight
-"     autocmd!
-"     " Use fg=nord0, bg=nord4
-"     autocmd ColorScheme nord highlight Normal guifg=#2E3440 guibg=#D8DEE9
-" augroup end
-
 " Uncomment these for Nord
 set termguicolors
 let g:nord_comment_brightness = 15
 silent! colorscheme nord
 
+" show existing tab with 4 spaces width
+" set tabstop=4
+" " when indenting with '>', use 4 spaces width
+" set shiftwidth=4
+" " On pressing tab, insert 4 spaces
+" set expandtab
+
+let g:pencil#conceallevel = 0
 
 " Uncomment line below to autostrip trailing whitespace on buffer write
 autocmd FileType c,cpp,cs,java,make,perl,vim,markdown,text,tla,xml autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -56,7 +57,8 @@ set nobackup
 set noswapfile
 set showtabline=1
 set foldlevelstart=99
-set foldmethod=syntax
+" set foldmethod=syntax
+set belloff=all
 
 " Airline configuration
 let g:airline_skip_empty_sections = 1
@@ -98,11 +100,11 @@ if executable('rg')
 endif
 
 " rg mappings
-nnoremap <Leader>r :Ack <C-R>=expand("<cword>")<CR><CR>
+nnoremap <Leader>g :Ack <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>R :Ack<Space>
 
 " Ggrep mapping
-nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR><CR><CR>
+" nnoremap <leader>g :Ggrep <C-R>=expand("<cword>")<CR><CR><CR>
 
 " Fugitive mappings
 nnoremap <Leader>gs :Gstatus<CR>
