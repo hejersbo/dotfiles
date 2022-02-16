@@ -142,6 +142,7 @@ bind -x '"\C-p": vim $(fzf);'
 # Use keychain to store ssh key (single login)
 # ONLY use for wsl2 since std linux runs ssh-agent on startup
 /usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
+/usr/bin/keychain -q --nogui /home/hejersbo/.ssh/id_ed25519
 source $HOME/.keychain/$HOSTNAME-sh
 
 export OPENSSL_ROOT_DIR="/usr/lib"
