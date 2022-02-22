@@ -1,5 +1,7 @@
 source ~/dotfiles/vim/plugs.vim
 
+packadd! termdebug
+
 if filereadable("Session.vim")
   silent! source Session.vim
 endif
@@ -69,6 +71,9 @@ let g:airline_section_y = ''
 
 let g:airline_symbols = get(g:,'airline_symbols',{})
 let g:airline_symbols.maxlinenr=''
+
+" Termdebug layout
+let g:termdebug_wide=1
 
 " GitGutter is more snappy with a smaller updatetime
 set updatetime=100
