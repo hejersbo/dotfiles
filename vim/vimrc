@@ -38,8 +38,14 @@ silent! colorscheme nord
 
 let g:pencil#conceallevel = 0
 
+" Uncomment line below to associate .tpp files with cpp
+autocmd BufRead,BufNewFile *.tpp set filetype=cpp
+
 " Uncomment line below to autostrip trailing whitespace on buffer write
 autocmd FileType c,cpp,cs,java,make,perl,vim,markdown,text,tla,xml autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Uncomment line below to view fmu files as zip
+au BufReadCmd *.fmu,*.jar call zip#Browse(expand("<amatch>"))
 
 " Automatically open quickfix window after any grep
 autocmd QuickFixCmdPost *grep* cwindow
@@ -101,7 +107,7 @@ endfunction
 
 " Use rg for ack
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep --no-heading -g!tags'
+  let g:ackprg = 'rg --vimgrep --no-heading -g!tags -g!log*'
 endif
 
 " rg mappings

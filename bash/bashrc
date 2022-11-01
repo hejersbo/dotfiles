@@ -98,7 +98,11 @@ alias c='proca.py'
 # alias sl='source ~/bin/set_light.sh'
 # alias sd='source ~/bin/set_dark.sh'
 
-alias t='ctags -R --c-kinds=+d --exclude=builds'
+# note: --langmap=c:+.tpp adds .tpp files recognized as c files
+alias t='ctags -R --langmap=c:+.tpp --c-kinds=+d --exclude=builds'
+
+# test alias for cpp tags
+# alias t='ctags -R --langmap=c++:+.tpp --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
