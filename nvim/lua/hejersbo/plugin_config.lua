@@ -1,4 +1,15 @@
-vim.cmd('colorscheme nord')
+vim.cmd[[colorscheme nord]]
+
+-- Nord config
+vim.g.nord_contrast = true
+vim.g.nord_borders = true
+vim.g.nord_disable_background = false
+vim.g.nord_italic = false
+vim.g.nord_uniform_diff_background = true
+vim.g.nord_bold = false
+
+-- Load the nord.nvim colorscheme
+-- require('nord').set()
 
 require('lualine').setup({
   options = {
@@ -9,8 +20,18 @@ require('lualine').setup({
   },
 })
 
--- Start interactive EasyAlign in visual mode (e.g. vipga)
---xmap ga <Plug>(EasyAlign)
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = "all",
+    sync_install = false,
 
--- Start interactive EasyAlign for a motion/text object (e.g. gaip)
---nmap ga <Plug>(EasyAlign)
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    },
+}
+
+local lsp = require('lsp-zero')
+
+lsp.preset('recommended')
+lsp.nvim_workspace()
+lsp.setup()

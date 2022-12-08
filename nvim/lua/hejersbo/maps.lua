@@ -20,3 +20,6 @@ vim.keymap.set('n', '<leader>h', ':Helptags<CR>')
 
 -- Close quickfix window
 vim.keymap.set('n', '<leader>c', ':ccl<CR>')
+
+-- Clear hlsearch
+vim.keymap.set('n', '<leader><leader>', ':noh<CR>')
