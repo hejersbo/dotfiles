@@ -30,8 +30,30 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
+
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 lsp.nvim_workspace()
+
+-- jdtls config
+--
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local config_dir = '/home/hejersbo/.cache/jdtls/config/' .. project_name
+local workspace_dir = '/home/hejersbo/.cache/jdtls/workspace/' .. project_name
+
+lsp.configure('jdtls', {
+  cmd = {
+    'jdtls',
+    '-configuration', config_dir,
+    '-data', workspace_dir,
+  },
+  root_dir = function()
+    return vim.fs.dirname(vim.fs.find({'.gradlew', '.git', 'mvnw'}, { upward = true })[1])
+    -- for test only: return  '/home/hejersbo/maestro/'
+  end
+})
+
 lsp.setup()
+
+vim.diagnostic.config({ virtual_text = true })
