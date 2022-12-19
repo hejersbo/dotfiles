@@ -63,8 +63,8 @@ require('packer').startup(function(use)
   }
   use 'nvim-lualine/lualine.nvim'
 
-  -- use 'arcticicestudio/nord-vim'
-  use 'shaunsingh/nord.nvim'
+  use 'arcticicestudio/nord-vim'
+  -- use 'shaunsingh/nord.nvim'
   use 'tpope/vim-sensible'
   use 'tpope/vim-abolish'
   use 'tpope/vim-commentary'
