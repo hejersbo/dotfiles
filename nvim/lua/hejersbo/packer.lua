@@ -51,11 +51,20 @@ require('packer').startup(function(use)
   }
 
   use("folke/zen-mode.nvim")
-
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+	-- your configuration comes here
+	-- or leave it empty to use the default settings
+	-- refer to the configuration section below
+      }
+    end
+  }
   use 'nvim-lualine/lualine.nvim'
 
-  use 'arcticicestudio/nord-vim'
-  -- use 'shaunsingh/nord.nvim'
+  -- use 'arcticicestudio/nord-vim'
+  use 'shaunsingh/nord.nvim'
   use 'tpope/vim-sensible'
   use 'tpope/vim-abolish'
   use 'tpope/vim-commentary'

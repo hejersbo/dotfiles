@@ -2,7 +2,7 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
--- sumneko_lua config
+-- sumneko_lua setup
 lsp.configure('sumneko_lua', {
   settings = {
     Lua = {
@@ -26,7 +26,7 @@ lsp.configure('sumneko_lua', {
   },
 })
 
--- jdtls config
+-- jdtls setup
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local config_dir = '/home/hejersbo/.cache/jdtls/config/' .. project_name
 local workspace_dir = '/home/hejersbo/.cache/jdtls/workspace/' .. project_name
@@ -43,6 +43,7 @@ lsp.configure('jdtls', {
   end
 })
 
+-- nvim-cmp setup
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -63,19 +64,22 @@ lsp.setup_nvim_cmp({
   sources = cmp_sources
 })
 
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
-})
+-- lsp.set_preferences({
+--     suggest_lsp_servers = false,
+--     sign_icons = {
+--         error = 'E',
+--         warn = 'W',
+--         hint = 'H',
+--         info = 'I'
+--     }
+-- })
 
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+lsp.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities);
 
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
