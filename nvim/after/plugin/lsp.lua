@@ -26,6 +26,15 @@ lsp.configure('sumneko_lua', {
   },
 })
 
+-- clangd setup
+local project_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p')
+lsp.configure('clangd', {
+  cmd = {
+    'clangd',
+    '--compile-commands-dir=' .. project_dir
+  }
+})
+
 -- jdtls setup
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local config_dir = '/home/hejersbo/.cache/jdtls/config/' .. project_name
@@ -74,10 +83,6 @@ lsp.setup_nvim_cmp({
 --     }
 -- })
 
-vim.diagnostic.config({
-    virtual_text = true,
-})
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 lsp.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities);
 
@@ -98,4 +103,6 @@ end)
 
 lsp.setup()
 
-
+vim.diagnostic.config({
+    virtual_text = true,
+})
