@@ -36,21 +36,21 @@ lsp.configure('clangd', {
 })
 
 -- jdtls setup
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local config_dir = '/home/hejersbo/.cache/jdtls/config/' .. project_name
-local workspace_dir = '/home/hejersbo/.cache/jdtls/workspace/' .. project_name
+-- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+-- local config_dir = '/home/hejersbo/.cache/jdtls/config/' .. project_name
+-- local workspace_dir = '/home/hejersbo/.cache/jdtls/workspace/' .. project_name
 
-lsp.configure('jdtls', {
-  cmd = {
-    'jdtls',
-    '-configuration', config_dir,
-    '-data', workspace_dir,
-  },
-  root_dir = function()
-    return vim.fs.dirname(vim.fs.find({'.gradlew', '.git', 'mvnw'}, { upward = true })[1])
-    -- for test only: return  '/home/hejersbo/maestro/'
-  end
-})
+-- lsp.configure('jdtls', {
+--   cmd = {
+--     'jdtls',
+--     '-configuration', config_dir,
+--     '-data', workspace_dir,
+--   },
+--   root_dir = function()
+--     return vim.fs.dirname(vim.fs.find({'.gradlew', '.git', 'mvnw'}, { upward = true })[1])
+--     -- for test only: return  '/home/hejersbo/maestro/'
+--   end
+-- })
 
 -- nvim-cmp setup
 local cmp = require('cmp')
@@ -73,15 +73,14 @@ lsp.setup_nvim_cmp({
   sources = cmp_sources
 })
 
--- lsp.set_preferences({
---     suggest_lsp_servers = false,
---     sign_icons = {
---         error = 'E',
---         warn = 'W',
---         hint = 'H',
---         info = 'I'
---     }
--- })
+lsp.ensure_installed({
+  'clangd',
+  'sumneko_lua'
+})
+
+lsp.set_preferences({
+    suggest_lsp_servers = false,
+})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 lsp.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities);
