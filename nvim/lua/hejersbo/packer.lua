@@ -12,7 +12,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function(use)
-  -- Packer can manage itself
+  -- Package manager
   use 'wbthomason/packer.nvim'
 
   use {
@@ -22,7 +22,18 @@ require('packer').startup(function(use)
   }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
-  use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+  use { -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  }
+
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }
+
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
@@ -49,9 +60,16 @@ require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+
+  -- Java JDTLS LSP config better alternative than standard nvim-lspconfig
   use 'mfussenegger/nvim-jdtls'
 
+  use 'j-hui/fidget.nvim'
+
+  use 'folke/neodev.nvim'
+
   use("folke/zen-mode.nvim")
+
   use {
     "folke/which-key.nvim",
     config = function()
