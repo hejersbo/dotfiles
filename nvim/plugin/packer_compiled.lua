@@ -191,6 +191,11 @@ _G.packer_plugins = {
     path = "/home/hejersbo/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
+  ["onenord.nvim"] = {
+    loaded = true,
+    path = "/home/hejersbo/.local/share/nvim/site/pack/packer/start/onenord.nvim",
+    url = "https://github.com/rmehri01/onenord.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/hejersbo/.local/share/nvim/site/pack/packer/start/packer.nvim",
