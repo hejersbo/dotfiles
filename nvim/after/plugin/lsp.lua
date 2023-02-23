@@ -2,8 +2,8 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
--- sumneko_lua setup
-lsp.configure('sumneko_lua', {
+-- lua_ls setup
+lsp.configure('lua_ls', {
   settings = {
     Lua = {
       runtime = {
@@ -75,7 +75,7 @@ lsp.setup_nvim_cmp({
 
 lsp.ensure_installed({
   'clangd',
-  'sumneko_lua'
+  'lua_ls'
 })
 
 lsp.set_preferences({

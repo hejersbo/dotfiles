@@ -1,4 +1,4 @@
-vim.opt.mouse = nil
+vim.opt.mouse = "a"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -8,8 +8,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-
-vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -33,6 +31,7 @@ vim.opt.belloff = all
 
 vim.g.mapleader = " "
 vim.g.ackprg = "rg --vimgrep --no-heading -g!tags -g!log*"
+
 
 
 

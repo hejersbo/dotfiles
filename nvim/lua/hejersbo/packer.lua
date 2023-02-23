@@ -61,6 +61,11 @@ require('packer').startup(function(use)
 	  }
   }
 
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
+
   -- Java JDTLS LSP config better alternative than standard nvim-lspconfig
   use 'mfussenegger/nvim-jdtls'
 
@@ -107,6 +112,7 @@ require('packer').startup(function(use)
   use 'inkarkat/vim-mark'
   use 'tommcdo/vim-exchange'
   use 'godlygeek/tabular'
+  use 'rhysd/vim-llvm'
 
   if install_plugins then
     require('packer').sync()
