@@ -34,6 +34,11 @@ autocmd({ "BufRead", "BufNewFile" }, {
     command = "set filetype=cpp"
 })
 
+autocmd({"BufReadCmd"}, {
+    pattern = {"*.fmu","*.jar"},
+    command = "call zip#Browse(expand(\"<amatch>\"))"
+})
+
 vim.g.netrw_browse_split = 0
 -- vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
