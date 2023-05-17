@@ -151,5 +151,7 @@ source $HOME/.keychain/$HOSTNAME-sh
 
 export OPENSSL_ROOT_DIR="/usr/lib"
 
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
