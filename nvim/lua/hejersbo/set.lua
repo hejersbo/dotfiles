@@ -27,7 +27,6 @@ vim.opt.updatetime = 50
 
 vim.opt.cursorline = true
 vim.opt.showtabline = 1
-vim.opt.belloff = all
 
 vim.g.mapleader = " "
 vim.g.ackprg = "rg --vimgrep --no-heading -g!tags -g!log*"
