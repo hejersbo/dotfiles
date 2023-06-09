@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { 'c', 'cpp', 'java', 'lua', 'python', 'help' },
+  ensure_installed = { 'c', 'cpp', 'java', 'lua', 'python', 'vimdoc' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
